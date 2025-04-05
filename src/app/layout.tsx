@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import AccessibilityToolbar from "../components/AccessibilityToolbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,20 +17,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Blog Acessível",
-  description: "Um blog acessível com conteúdos sobre autismo e inclusão.",
+  description: "Um blog acessível sobre autismo e inclusão.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <AccessibilityToolbar />
+        <Header />
         <main className="container mx-auto p-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );
