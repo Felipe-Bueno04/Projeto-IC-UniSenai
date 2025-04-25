@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import AccessibilityToolbar from "./AccessibilityToolbar";
 
 export default function Header() {
   return (
     <header className="bg-blue-600 text-white p-4">
       <nav className="container mx-auto flex justify-between">
+        <AccessibilityToolbar />
         <Link href="/">
           <span className="text-2xl font-bold">Blog Acessível</span>
         </Link>

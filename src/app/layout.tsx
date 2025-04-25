@@ -24,7 +24,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AccessibilityToolbar />
         <Header />
         <main className="container mx-auto p-4">{children}</main>
         <Footer />
