@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   const posts = [
+    // Pode adicionar mais posts aqui depois
     {
       title: "Entendendo o Autismo: Um Guia Completo",
       excerpt: "Conheça os principais sinais, diagnósticos e formas de apoio para pessoas com autismo.",
@@ -13,7 +14,6 @@ export default function Home() {
       excerpt: "Práticas e estratégias para tornar a escola um ambiente mais inclusivo.",
       slug: "inclusao-escolar",
     },
-    // Você pode adicionar mais posts aqui depois
   ];
 
   return (
