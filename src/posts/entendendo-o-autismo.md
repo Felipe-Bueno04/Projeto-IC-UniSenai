@@ -1,13 +1,12 @@
 ---
-title: "Entendendo o Autismo: Um Guia Completo"
-date: "2025-04-25"
+title: "Modelo de post: Entendendo o Autismo"
+date: "2025-04-24"
+coverImage: "/images/entendendo-o-autismo.jpg"
+excerpt: "Uma introdução sobre o autismo, suas características e como promover a inclusão."
 ---
 
 ## Introdução
 
-O autismo é um espectro, e cada pessoa é única...
+O autismo é um transtorno do desenvolvimento neurológico...
 
-**Tópicos que você verá aqui:**
-- O que é TEA
-- Como identificar sinais
-- Inclusão escolar
+*(conteúdo completo do post vai aqui)*

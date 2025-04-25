@@ -13,12 +13,23 @@ export default async function HomePage() {
           <Link
             key={post.slug}
             href={`/posts/${post.slug}`}
-            className="block p-6 border rounded-lg shadow hover:shadow-md transition bg-white dark:bg-gray-800 dark:border-gray-700"
+            className="block border rounded-lg overflow-hidden shadow hover:shadow-lg transition bg-white dark:bg-gray-800 dark:border-gray-700"
           >
-            <h2 className="text-2xl font-semibold mb-2 text-black dark:text-white">{post.title}</h2>
-            <p className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+            {post.coverImage && (
+              <img
+                src={post.coverImage}
+                alt={`Imagem de capa do post ${post.title}`}
+                className="w-full h-48 object-cover"
+              />
+            )}
+            <div className="p-4">
+              <h2 className="text-2xl font-semibold mb-2 text-black dark:text-white">{post.title}</h2>
+              <p className="text-sm text-gray-500 mb-2">{new Date(post.date).toLocaleDateString()}</p>
+              <p className="text-gray-700 dark:text-gray-300">{post.excerpt}</p>
+            </div>
           </Link>
         ))}
+
       </div>
     </main>
   );

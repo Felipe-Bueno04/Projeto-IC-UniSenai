@@ -24,22 +24,24 @@ export async function getPost(slug: string) {
 }
 
 // 🆕 Nova função para listar todos os posts:
+// src/lib/posts.ts
 export function getAllPosts() {
-  const fileNames = fs.readdirSync(postsDirectory);
-
-  const posts = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
-
-    return {
-      slug,
-      title: data.title,
-      date: data.date,
-    };
-  });
-
-  // Ordena os posts pela data (mais recente primeiro)
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
-}
+    const fileNames = fs.readdirSync(postsDirectory);
+  
+    const posts = fileNames.map((fileName) => {
+      const slug = fileName.replace(/\.md$/, "");
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+  
+      return {
+        slug,
+        title: data.title,
+        date: data.date,
+        coverImage: data.coverImage,
+        excerpt: data.excerpt,
+      };
+    });
+  
+    return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  }  
