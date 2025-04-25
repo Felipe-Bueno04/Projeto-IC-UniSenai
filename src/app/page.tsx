@@ -1,27 +1,23 @@
-import PostCard from "@/components/PostCard";
-import Image from "next/image";
+import { getAllPosts } from "@/lib/posts";
+import Link from "next/link";
 
-export default function Home() {
-  const posts = [
-    // Pode adicionar mais posts aqui depois
-    {
-      title: "Entendendo o Autismo: Um Guia Completo",
-      excerpt: "Conheça os principais sinais, diagnósticos e formas de apoio para pessoas com autismo.",
-      slug: "entendendo-o-autismo",
-    },
-    {
-      title: "Dicas de Inclusão Escolar",
-      excerpt: "Práticas e estratégias para tornar a escola um ambiente mais inclusivo.",
-      slug: "inclusao-escolar",
-    },
-  ];
+export default async function HomePage() {
+  const posts = getAllPosts();
 
   return (
-    <main className="max-w-7xl mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-8 text-center text-black dark:text-white">Blog sobre Autismo</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main className="max-w-5xl mx-auto p-6">
+      <h1 className="text-4xl font-bold mb-8 text-black dark:text-white">Últimas Postagens</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
-          <PostCard key={post.slug} {...post} />
+          <Link
+            key={post.slug}
+            href={`/posts/${post.slug}`}
+            className="block p-6 border rounded-lg shadow hover:shadow-md transition bg-white dark:bg-gray-800 dark:border-gray-700"
+          >
+            <h2 className="text-2xl font-semibold mb-2 text-black dark:text-white">{post.title}</h2>
+            <p className="text-sm text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+          </Link>
         ))}
       </div>
     </main>
