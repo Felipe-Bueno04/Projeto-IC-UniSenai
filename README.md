@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Recursos do projeto](/public/image1.png)
+
+## Tamanho ideal para a imagem de capa (coverImage):
+
+Para cards na home (thumbnail) | 1200 x 600 px | .jpg ou .webp
+###
+Para a página do post (hero img) | 1200 x 800 px | .jpg ou .webp
+### 📐 Tamanho mínimo recomendado
+800 x 400 px -
+Imagens menores que isso podem ficar pixeladas ou mal cortadas em telas maiores.
 
 ## Getting Started
 
