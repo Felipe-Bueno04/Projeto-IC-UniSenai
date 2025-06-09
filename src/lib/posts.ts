@@ -24,7 +24,6 @@ export async function getPost(slug: string) {
 }
 
 // 🆕 Nova função para listar todos os posts:
-// src/lib/posts.ts
 export function getAllPosts() {
     const fileNames = fs.readdirSync(postsDirectory);
   
