@@ -38,7 +38,7 @@ export default function Header() {
     <header className="bg-blue-600 text-white p-4">
       <nav className="container mx-auto flex justify-between">
         <Link href="/">
-          <span className="text-2xl font-bold cursor-pointer">Blog Acessível</span>
+          <span className="text-2xl font-bold cursor-pointer">Juntos e Misturados</span>
         </Link>
 
         <Menu as="div" className="relative">

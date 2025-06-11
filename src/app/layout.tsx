@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Blog Acessível",
+  title: "Juntos e misturados",
   description: "Um blog acessível sobre autismo e inclusão.",
 };
 
