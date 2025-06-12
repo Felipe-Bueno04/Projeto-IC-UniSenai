@@ -38,7 +38,7 @@ export default function Header() {
     <header className="bg-blue-600 text-white p-4">
       <nav className="container mx-auto flex justify-between">
         <Link href="/">
-          <span className="text-2xl font-bold cursor-pointer">Juntos e Misturados</span>
+          <span className="font-poppins text-2xl">Juntos e Misturados</span>
         </Link>
 
         <Menu as="div" className="relative">
@@ -63,17 +63,6 @@ export default function Header() {
                     className={`block px-4 py-2 rounded ${active ? "bg-gray-100" : ""}`}
                   >
                     Sobre
-                  </Link>
-                )}
-              </Menu.Item>
-
-              <Menu.Item>
-                {({ active }) => (
-                  <Link
-                    href="/acessibilidade"
-                    className={`block px-4 py-2 rounded ${active ? "bg-gray-100" : ""}`}
-                  >
-                    Acessibilidade
                   </Link>
                 )}
               </Menu.Item>
