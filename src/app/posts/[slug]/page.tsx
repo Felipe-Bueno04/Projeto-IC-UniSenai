@@ -1,14 +1,15 @@
 import SpeechReader from "@/components/SpeechReader";
-import { getPost } from "@/lib/posts";
+import { getAllPosts, getPost } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
-// Correto tipo para `params` no App Router
+// Tipos
 type Props = {
   params: {
     slug: string;
   };
 };
 
+// Página de post
 export default async function PostPage({ params }: Props) {
   const post = await getPost(params.slug);
 
@@ -29,4 +30,13 @@ export default async function PostPage({ params }: Props) {
       />
     </main>
   );
+}
+
+// ⚠️ Esta função é obrigatória com parâmetros dinâmicos!
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
