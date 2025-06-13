@@ -2,11 +2,13 @@ import SpeechReader from "@/components/SpeechReader";
 import { getPost } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+type PostPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export default async function PostPage({ params }: PostPageProps) {
   const post = await getPost(params.slug);
 
   if (!post) {
