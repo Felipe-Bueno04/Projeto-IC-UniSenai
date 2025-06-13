@@ -2,13 +2,14 @@ import SpeechReader from "@/components/SpeechReader";
 import { getPost } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
-type PostPageProps = {
+// Correto tipo para `params` no App Router
+type Props = {
   params: {
     slug: string;
   };
 };
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: Props) {
   const post = await getPost(params.slug);
 
   if (!post) {
