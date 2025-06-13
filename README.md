@@ -11,8 +11,14 @@ Imagens menores que isso podem ficar pixeladas ou mal cortadas em telas maiores.
 
 ## Getting Started
 
-First, run the development server:
+Para rodar o blog, siga as etapas abaixo:
 
+Primeiro execute o seguinte comando no terminal:
+```bash
+npm -i install
+```
+
+Por último, execute:
 ```bash
 npm run dev
 # or
