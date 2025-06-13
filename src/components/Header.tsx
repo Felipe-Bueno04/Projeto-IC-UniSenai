@@ -38,12 +38,12 @@ export default function Header() {
     <header className="bg-blue-600 text-white p-4">
       <nav className="container mx-auto flex justify-between">
         <Link href="/">
-          <span className="font-poppins text-2xl">Juntos e Misturados</span>
+          <span className="font-poppins text-3xl">Juntos e Misturados</span>
         </Link>
 
         <Menu as="div" className="relative">
-          <Menu.Button className="p-2 rounded-md focus:ring-2 ring-white cursor-pointer">
-            ☰ Menu
+          <Menu.Button className="font-poppins text-2xl p-2 rounded-md focus:ring-2 ring-white cursor-pointer">
+            ☰
           </Menu.Button>
 
           <Transition
