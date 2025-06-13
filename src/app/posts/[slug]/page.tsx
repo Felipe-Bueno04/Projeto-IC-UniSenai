@@ -1,16 +1,15 @@
 import SpeechReader from "@/components/SpeechReader";
 import { getAllPosts, getPost } from "@/lib/posts";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
-// Tipos
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({ slug: post.slug }));
+}
 
-// Página de post
-export default async function PostPage({ params }: Props) {
+// 👇 Aqui está a função correta
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
 
   if (!post) {
@@ -30,13 +29,4 @@ export default async function PostPage({ params }: Props) {
       />
     </main>
   );
-}
-
-// ⚠️ Esta função é obrigatória com parâmetros dinâmicos!
-export async function generateStaticParams() {
-  const posts = getAllPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
 }
