@@ -8,7 +8,11 @@ interface Props {
   };
 }
 
-export default async function PostPage({ params }: Props) {
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await getPost(params.slug);
 
   if (!post) {
@@ -27,4 +31,5 @@ export default async function PostPage({ params }: Props) {
     </main>
   );
 }
+
 
