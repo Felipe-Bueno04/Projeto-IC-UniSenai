@@ -11,6 +11,8 @@ Imagens menores que isso podem ficar pixeladas ou mal cortadas em telas maiores.
 
 ## Getting Started
 
+
+TROVAO MULA PRA QUE MUDAR O README CARA AGORA TENHO QUE DAR PULL AQUI
 Para rodar o blog, siga as etapas abaixo:
 
 Primeiro execute o seguinte comando no terminal:
@@ -18,7 +20,6 @@ Primeiro execute o seguinte comando no terminal:
 npm -i install
 ```
 
-Por último, execute:
 ```bash
 npm run dev
 # or
